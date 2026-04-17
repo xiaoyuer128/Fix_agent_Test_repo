@@ -1,7 +1,10 @@
+import logging
+
 def process_sensor_data(data_list: list) -> float:
-    """处理传感器传入的数据列表，计算平均值。"""
+    '''处理传感器传入的数据列表，计算平均值。'''
     # 增加对空列表的安全检查
     if not data_list:
+        logging.warning('Empty data list provided to process_sensor_data.')
         return 0.0  # 根据业务需求选择返回0.0
 
     # 检查data_list中的所有元素是否为数值类型
@@ -19,5 +22,5 @@ def process_sensor_data(data_list: list) -> float:
     return result
 
 def check_system_health() -> bool:
-    """模拟系统健康检查"""
+    '''模拟系统健康检查'''
     return True
